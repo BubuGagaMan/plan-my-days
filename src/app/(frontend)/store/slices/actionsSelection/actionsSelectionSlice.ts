@@ -15,7 +15,7 @@ export enum DayActions {
 export const createActionsSelectionSlice: StateCreator<UseAppStore, [], [], ActionsSelectionSlice> = (set) => ({
     activeDayAction: DayActions.MARK_SINGLE,
     setActiveDayAction: (dayAction) => {
-        console.log(111);
         set({ activeDayAction: dayAction });
     },
+
 });
