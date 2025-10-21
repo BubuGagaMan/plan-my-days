@@ -20,10 +20,15 @@ type PublicHolidaysData = {
     };
 };
 
-export const fetchPublicHolidays = async (region: UKRegion) => {
-    const res = await fetch("https://www.gov.uk/bank-holidays.json");
-    const data: PublicHolidaysData = await res.json();
+const WEEK = 60 * 60 * 24 * 7;
 
-    const publicHolidays = data[region].events;
-    return publicHolidays;
+export const fetchPublicHolidays = async (region: UKRegion) => {
+    const res = await fetch("https://www.gov.uk/bank-holidays.json", {
+        next: { revalidate: WEEK }, // cache external API data for 7 days
+    });
+
+    if (!res.ok) throw new Error("Failed to fetch holidays");
+
+    const data: PublicHolidaysData = await res.json();
+    return data[region].events;
 };
