@@ -15,7 +15,7 @@ export default function Toggle({ label, checked, onChange, disabled, grid }: Tog
 
     return (
         <div
-            className="gap-1.5"
+            className={`gap-1.5 $  ${disabled ? "opacity-50" : ""}`}
             style={{
                 display: grid ? "grid" : "flex",
                 justifyContent: grid ? undefined : "space-between",
@@ -47,7 +47,7 @@ export default function Toggle({ label, checked, onChange, disabled, grid }: Tog
           transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500
           inset-shadow-[1px_1px_3px_1px_black]
           focus:ring-offset-2 ${checked ? "bg-neutral-800/90" : "bg-gray-300"}
-          ${disabled ? "opacity-50" : ""}
+        
         `}
                 style={{
                     cursor: disabled ? "not-allowed" : "pointer",
