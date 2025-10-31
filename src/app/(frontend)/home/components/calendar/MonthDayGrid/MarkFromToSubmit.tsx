@@ -1,10 +1,9 @@
-import { LoadingSpinner } from "../../home/components/LoadingSpinner";
+import { LoadingSpinner } from "../../LoadingSpinner";
 import { useAppStore } from "@/app/(frontend)/store/useAppStore";
-import { DBDayMark } from "../../../types/dateTypes";
-import { getDateRange } from "../../../utilities/getDateRange";
-import { markDayAction } from "./markDayAction";
+import { DBDayMark } from "../../../../../types/dateTypes";
+import { getDateRange } from "../../../../../utilities/getDateRange";
+import { markDayAction } from "./markDay.action";
 import { useFormStatus } from "react-dom";
-import { useEffect } from "react";
 
 type Props = {
     date: string;

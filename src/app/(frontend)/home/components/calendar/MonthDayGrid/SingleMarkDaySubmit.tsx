@@ -1,8 +1,8 @@
 import { useFormStatus } from "react-dom";
-import { Day2 } from "../../../utilities/getCalendarMonth";
-import { LoadingSpinner } from "../../home/components/LoadingSpinner";
-import { markDayAction } from "./markDayAction";
-import { DBDayMark } from "../../../types/dateTypes";
+import { Day2 } from "../../../../../utilities/getCalendarMonth";
+import { LoadingSpinner } from "../../LoadingSpinner";
+import { markDayAction } from "./markDay.action";
+import { DBDayMark } from "../../../../../types/dateTypes";
 
 type Props = {
     day: Day2;
