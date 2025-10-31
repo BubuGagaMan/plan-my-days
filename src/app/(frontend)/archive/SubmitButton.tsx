@@ -5,7 +5,7 @@ import { actionDayOff } from "./offDaysActions";
 import { useFormStatus } from "react-dom";
 import { LoadingSpinner } from "../home/components/LoadingSpinner";
 import { useAppStore } from "@/app/(frontend)/store/useAppStore";
-import { DBDayMark } from "../home/types/dateTypes";
+import { DBDayMark } from "../../types/dateTypes";
 import { useEffect } from "react";
 
 type Props = {

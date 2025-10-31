@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Day } from "../home/types/dateTypes";
-import { daysOfTheWeek, monthsOfTheYear } from "../home/dateMaps";
+import { Day } from "../../types/dateTypes";
+import { daysOfTheWeek, monthsOfTheYear } from "../../maps/dateMaps";
 import { generateCalendarMonth } from "./utilities/generateCalendarMonth";
 
 export default function Home() {

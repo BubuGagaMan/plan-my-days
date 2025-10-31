@@ -1,7 +1,7 @@
 "use server";
 import { serverSideSupabase } from "../supabaseServerShit/serverSideSupabase";
 import { revalidatePath } from "next/cache";
-import { DBDayMark } from "../home/types/dateTypes";
+import { DBDayMark } from "../../types/dateTypes";
 // import { DayMarkOption } from "../components/calendar/DayMarkPicker";
 
 export const actionDayOff = async (path: string, dayMark: DBDayMark, formData: FormData) => {

@@ -1,5 +1,5 @@
-import { Day, DBDay, DBMarkedDay, PublicHoliday, PublicHolidaySeparateDMY } from "../home/types/dateTypes";
-import { getMonthEnd } from "../home/utilities/getMonthEnd";
+import { Day, DBDay, DBMarkedDay, PublicHoliday, PublicHolidaySeparateDMY } from "../../types/dateTypes";
+import { getMonthEnd } from "../../utilities/getMonthEnd";
 
 
 export function generateCalendarMonth(

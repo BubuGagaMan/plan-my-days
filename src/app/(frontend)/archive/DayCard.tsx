@@ -1,5 +1,5 @@
-import { Day, DBMarkedDay } from "../home/types/dateTypes";
-import { daysOfTheWeek } from "../home/dateMaps";
+import { Day, DBMarkedDay } from "../../types/dateTypes";
+import { daysOfTheWeek } from "../../maps/dateMaps";
 import { SubmitButton } from "./SubmitButton";
 
 export default function DayCard({ day, isPreview }: { day: Day; isPreview?: boolean }) {

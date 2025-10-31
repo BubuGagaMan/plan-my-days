@@ -1,4 +1,4 @@
-import { Day, DBMarkedDay } from "../home/types/dateTypes";
+import { Day, DBMarkedDay } from "../../types/dateTypes";
 import DayCard from "./DayCard";
 
 export default function MonthDays({ monthMap }: { monthMap: Day[] }) {

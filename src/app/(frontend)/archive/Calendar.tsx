@@ -2,9 +2,9 @@ import MonthDays from "./MonthDays";
 import { generateCalendarMonth } from "./generateCalendarMonth";
 import { fetchOffDays } from "./offDays";
 import { CalendarHeader } from "../home/components/calendar/header/CalendarHeader";
-import { fetchPublicHolidays, UKRegion, UKRegionSet } from "../home/services/publicHolidays";
-import { fetchUserMarkedDays } from "../home/services/userMarkedDays.services";
-import { fetchUserDayMarks } from "../home/services/dayMarks.services";
+import { getPublicHolidays, UKRegion, UKRegionSet } from "../../services/publicHolidays.services";
+import { getAllMarkedDays } from "../../services/markedDays.services";
+import { getAllDayMarks } from "../../services/dayMarks.services";
 import { DayMarkOption } from "../home/components/calendar/header/markPicker/DayMarkPicker";
 import MarkOptionsBar from "../home/components/calendar/MarkOptionsBar/MarkOptionsBar";
 
@@ -23,10 +23,10 @@ export default async function Calendar({ searchParams }: Props) {
             ? (queryParams.region as UKRegion)
             : UKRegion.ENGLAND;
 
-    const publicHolidays = await fetchPublicHolidays(regionParam as UKRegion);
+    const publicHolidays = await getPublicHolidays(regionParam as UKRegion);
     const userOffDays = await fetchOffDays();
-    const userMarkedDays = await fetchUserMarkedDays();
-    const userDayMarks: DayMarkOption[] | null = await fetchUserDayMarks();
+    const userMarkedDays = await getAllMarkedDays();
+    const userDayMarks: DayMarkOption[] | null = await getAllDayMarks();
 
     const monthMap = generateCalendarMonth(yearParam, monthParam + 1, userMarkedDays, publicHolidays);
     // console.log(monthMap)
