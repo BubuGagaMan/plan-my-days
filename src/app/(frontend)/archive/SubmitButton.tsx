@@ -17,6 +17,7 @@ type Props = {
 
 export function SubmitButton({ isOffDay, isWeekend, isPublicHoliday, dayMark }: Props) {
     const pickedDayMark = useAppStore((s) => s.dayMark);
+    const { pending } = useFormStatus();
 
     const pathname = usePathname();
 
@@ -24,12 +25,11 @@ export function SubmitButton({ isOffDay, isWeekend, isPublicHoliday, dayMark }: 
     - in order to retain the path params after the request and path is refreshed
   */
 
-    useEffect(() => {}, [pickedDayMark]);
+    // useEffect(() => {}, [pickedDayMark]);
     if (!pickedDayMark) {
         return <LoadingSpinner />;
     }
     const actionWithParams = actionDayOff.bind(null, pathname, pickedDayMark);
-    const { pending } = useFormStatus();
 
     return (
         <button

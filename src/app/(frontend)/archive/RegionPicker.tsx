@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import { UKRegion } from "../../services/publicHolidays";
+import { UKRegion } from "../home/services/publicHolidays";
 
 
 interface RegionPickerProps {

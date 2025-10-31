@@ -1,4 +1,4 @@
-import QueryParamInput from "../home/components/QueryParamInput";
+import QueryParamInput from "./QueryParamInput";
 import Calendar from "./Calendar";
 
 export default function Home({ searchParams }: { searchParams: any }) {

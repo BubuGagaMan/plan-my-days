@@ -1,6 +1,6 @@
 import MonthDays from "./MonthDays";
 import { generateCalendarMonth } from "./generateCalendarMonth";
-import { fetchOffDays } from "../home/services/offDays";
+import { fetchOffDays } from "./offDays";
 import { CalendarHeader } from "../home/components/calendar/header/CalendarHeader";
 import { fetchPublicHolidays, UKRegion, UKRegionSet } from "../home/services/publicHolidays";
 import { fetchUserMarkedDays } from "../home/services/userMarkedDays.services";
