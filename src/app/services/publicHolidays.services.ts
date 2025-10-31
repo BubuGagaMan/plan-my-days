@@ -22,7 +22,7 @@ type PublicHolidaysData = {
 
 const WEEK = 60 * 60 * 24 * 7;
 
-export const fetchPublicHolidays = async (region: UKRegion) => {
+export const getPublicHolidays = async (region: UKRegion) => {
 
     const res = await fetch("https://www.gov.uk/bank-holidays.json", {
         next: { revalidate: WEEK }, // cache external API data for 7 days

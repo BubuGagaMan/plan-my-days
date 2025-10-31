@@ -1,4 +1,4 @@
-import { daysOfTheWeek } from "../dateMaps";
+import { daysOfTheWeek } from "../maps/dateMaps";
 import { DBDayMark, DBMarkedDay, PublicHoliday } from "../types/dateTypes";
 import { getMonthEnd } from "./getMonthEnd";
 
@@ -37,9 +37,9 @@ export const getCalendarMonth = (
     let startWeekDay = monthStart.getDay();
     let endWeekDay = monthEnd.getDay();
 
-    let startWeekDayChecked = startWeekDay !== 0 ? startWeekDay : 7;
+    const startWeekDayChecked = startWeekDay !== 0 ? startWeekDay : 7;
 
-    let result = [];
+    const result = [];
 
     // days before FROM MONDAY, before start of current month (if any)
     for (let i = 1; i < startWeekDayChecked; i++) {

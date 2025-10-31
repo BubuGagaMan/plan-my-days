@@ -11,7 +11,7 @@ export const getDateRange = (fromDate: string, toDate: string) => {
     }
 
     const result = [];
-    let current = new Date(rangeStart);
+    const current = new Date(rangeStart);
 
     while (current <= rangeEnd) {
         // Format yyyy-mm-dd
