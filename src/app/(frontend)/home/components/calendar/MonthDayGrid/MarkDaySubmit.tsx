@@ -1,13 +1,13 @@
 "use client";
 
 import { useAppStore } from "@/app/(frontend)/store/useAppStore";
-import { Day2 } from "../../../../../utilities/getCalendarMonth";
 import MarkFromToSubmit from "./MarkFromToSubmit";
 import Link from "next/link";
 import SingleMarkDaySubmit from "./SingleMarkDaySubmit";
 import { DayActions, DayActionsQuantity } from "@/app/(frontend)/store/slices/actionsOptions/actionsOptionsSlice";
+import { Day } from "@/app/types/dateTypes";
 
-export default function MarkDaySubmit({ day, small }: { day: Day2, small?: boolean }) {
+export default function MarkDaySubmit({ day, small }: { day: Day, small?: boolean }) {
     const selectedDayMark = useAppStore((s) => s.dayMark);
     const activeDayAction = useAppStore((s) => s.dayActionsOptions.selectionAction);
     const activeDayActionQuantity = useAppStore((s) => s.dayActionsOptions.selectionQuantity);
