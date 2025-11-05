@@ -1,11 +1,10 @@
 import { useFormStatus } from "react-dom";
-import { Day2 } from "../../../../../utilities/getCalendarMonth";
-import { LoadingSpinner } from "../../LoadingSpinner";
 import { markDayAction } from "./markDay.action";
-import { DBDayMark } from "../../../../../types/dateTypes";
+import { Day, DBDayMark } from "@/app/types/dateTypes";
+import { LoadingSpinner } from "../../LoadingSpinner";
 
 type Props = {
-    day: Day2;
+    day: Day;
     selectedDayMark: DBDayMark | null;
     clear: boolean;
     overwrite: boolean;
