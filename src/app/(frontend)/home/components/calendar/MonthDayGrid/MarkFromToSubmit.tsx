@@ -1,7 +1,7 @@
 import { LoadingSpinner } from "../../LoadingSpinner";
 import { useAppStore } from "@/app/(frontend)/store/useAppStore";
-import { DBDayMark } from "../../../../../types/dateTypes";
-import { getDateRange } from "../../../../../utilities/getDateRange";
+import { DBDayMark } from "@/app/types/dateTypes";
+import { getDateRange } from "@/app/utilities/getDateRange";
 import { markDayAction } from "./markDay.action";
 import { useFormStatus } from "react-dom";
 
