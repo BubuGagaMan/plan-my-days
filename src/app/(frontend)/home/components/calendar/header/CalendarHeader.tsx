@@ -1,6 +1,6 @@
-import { UKRegion } from "../../../../../services/publicHolidays.services";
+import { UKRegion } from "@/app/types/publicHolidays.types";
 import SelectPicker from "../../base/SelectPicker";
-import { CalendarGrid } from "../../../../../types/dateTypes";
+import { CalendarGrid } from "@/app/types/dateTypes";
 import DateSetter from "./dateSetter/DateSetter";
 
 type Props = {
