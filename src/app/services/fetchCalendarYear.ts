@@ -1,17 +1,19 @@
+import { Month, Year } from "../types/dateTypes";
 import { getCalendarMonth } from "../utilities/getCalendarMonth";
 import { getAllMarkedDays } from "./markedDays.services";
-import { getPublicHolidays, UKRegion } from "./publicHolidays.services";
+import { getPublicHolidays } from "./publicHolidays.services";
+import { UKRegion } from "../types/publicHolidays.types";
 
 // use other services + logic to construct a calendar year
-export const fetchCalendarYear = async (year: number, region: UKRegion) => {
+export const fetchCalendarYear = async (year: number, region: UKRegion): Promise<Year> => {
     const publicHolidays = await getPublicHolidays(region);
     const userMarkedDays = await getAllMarkedDays();
 
-    const yearAll = [];
+    const yearDays = [];
     for (let i = 0; i < 12; i++) {
-        const fullMonthCalendar: any = getCalendarMonth(year, i + 1, userMarkedDays || [], publicHolidays);
-        yearAll.push(fullMonthCalendar);
+        const monthDays: Month = getCalendarMonth(year, i + 1, userMarkedDays || [], publicHolidays);
+        yearDays.push(monthDays);
     }
 
-    return yearAll;
+    return yearDays;
 };
