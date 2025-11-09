@@ -1,24 +1,13 @@
 import { daysOfTheWeek } from "../maps/dateMaps";
-import { DBDayMark, DBMarkedDay, PublicHoliday } from "../types/dateTypes";
+import { Day, DBMarkedDay, PublicHoliday } from "../types/dateTypes";
 import { getMonthEnd } from "./getMonthEnd";
-
-export type Day2 = {
-    weekDay: string;
-    monthDay: number;
-    month: number;
-    year: number;
-    isFromCurrentMonth: boolean;
-    date: string;
-    markedDay: DBMarkedDay | null;
-    publicHoliday: PublicHoliday | null;
-};
 
 export const getCalendarMonth = (
     year: number,
     month: number,
     markedDays: DBMarkedDay[],
     publicHolidays: PublicHoliday[]
-): Day2[] => {
+): Day[] => {
     const zeroIndexMonth = month - 1;
 
     const lastMonthDay = getMonthEnd(year, zeroIndexMonth);
@@ -54,7 +43,7 @@ export const getCalendarMonth = (
         const publicHoliday = publicHolidays.find((pHoliday: PublicHoliday) => pHoliday.date === date) || null;
         const markedDay = markedDays.find((markedDay: DBMarkedDay) => markedDay.date === date) || null;
 
-        const dayObject: Day2 = {
+        const dayObject: Day = {
             weekDay: daysOfTheWeek[i],
             monthDay,
             month,
@@ -78,7 +67,7 @@ export const getCalendarMonth = (
         const publicHoliday = publicHolidays.find((pHoliday: PublicHoliday) => pHoliday.date === date) || null;
         const markedDay = markedDays.find((markedDay: DBMarkedDay) => markedDay.date === date) || null;
 
-        const dayObject: Day2 = {
+        const dayObject: Day = {
             weekDay: daysOfTheWeek[startWeekDay],
             monthDay,
             month,
@@ -100,7 +89,6 @@ export const getCalendarMonth = (
 
     const nextMonthExists = zeroIndexMonth + 1 > 11 ? false : true;
 
-
     // days TO SUNDAY after current month (if any)
     for (let i = 1; endWeekDay < 7 && endWeekDay > 0; i++) {
         endWeekDay++;
@@ -121,7 +109,7 @@ export const getCalendarMonth = (
             const publicHoliday = publicHolidays.find((pHoliday: PublicHoliday) => pHoliday.date === date) || null;
             const markedDay = markedDays.find((markedDay: DBMarkedDay) => markedDay.date === date) || null;
 
-            const sundayObject: Day2 = {
+            const sundayObject: Day = {
                 weekDay: daysOfTheWeek[0],
                 monthDay: monthDay,
                 month: monthNext,
@@ -135,7 +123,7 @@ export const getCalendarMonth = (
             return result;
         }
 
-        const dayObject: Day2 = {
+        const dayObject: Day = {
             weekDay: daysOfTheWeek[endWeekDay],
             monthDay,
             month: monthNext,
