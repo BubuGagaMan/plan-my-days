@@ -1,0 +1,22 @@
+.unmarked-day {
+    background-color: hsl(0, 0%, 27%);
+    color: rgb(209, 209, 209);
+}
+
+.weekend-day {
+    background-color: hsl(43, 49%, 52%);
+    color: hsl(5, 60%, 43%);
+}
+
+.public-holiday {
+    background-color: hsl(258, 37%, 48%);
+    color: hsl(43, 70%, 45%);
+}
+
+.out-of-month-day {
+    opacity: 0.35;
+}
+
+.out-of-month-day:hover {
+    opacity: 1;
+}
