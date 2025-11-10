@@ -6,8 +6,6 @@ import { useAppStore } from "@/app/(frontend)/store/useAppStore";
 import { ReadonlyURLSearchParams, useRouter, useSearchParams } from "next/navigation";
 import { LoadingSpinner } from "../../../LoadingSpinner";
 import { DayActions } from "@/app/(frontend)/store/slices/actionsOptions/actionsOptionsSlice";
-import { MdDelete } from "react-icons/md";
-import { deleteDayActionForm } from "../../../../actions/deleteDayMark.action";
 import { useFormStatus } from "react-dom";
 import DeleteDayMark from "./DeleteDayMark";
 
