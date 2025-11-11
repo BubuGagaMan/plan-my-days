@@ -37,7 +37,7 @@ export default function StatefulInput({
         w-full px-4 py-2 rounded-lg 
         bg-neutral-900 text-white placeholder-gray-500
         border ${error ? "border-red-500" : "border-neutral-700"}
-        focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent
+        focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent
         transition-colors
       `}
         />
