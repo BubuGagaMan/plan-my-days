@@ -1,5 +1,5 @@
 import { CalendarGrid, CalendarGridArr } from "@/app/types/dateTypes";
-import { UKRegion, UKRegionSet } from "@/app/api/public-holidays/route";
+import { UKRegion, UKRegionSet } from "@/app/types/publicHolidays.types";
 
 const date = new Date();
 // sanitise might be a better name, but didn't want to bother with thinking between sanitise and sanitize
