@@ -1,15 +1,13 @@
-'use client'
-
 type Props = {
   size?: number
   color?: string
   thickness?: number
 }
 
-export function LoadingSpinner({ size = 20, color = '#000', thickness = 2 }: Props) {
+export function LoadingSpinner({ size = 21, color = 'red', thickness = 4 }: Props) {
   return (
     <div
-      className="inline-block rounded-full border-solid animate-spin"
+      className="rounded-full border-solid animate-spin mx-auto"
       style={{
         width: size,
         height: size,
