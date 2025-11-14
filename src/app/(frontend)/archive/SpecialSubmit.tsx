@@ -2,7 +2,7 @@
 import { useAppStore } from "@/app/(frontend)/store/useAppStore";
 import { markMultipleDaysAction } from "./markMultipleDaysAction";
 import { useEffect } from "react";
-import { LoadingSpinner } from "../home/components/LoadingSpinner";
+import { LoadingSpinner } from "../components/LoadingSpinner";
 import { useFormStatus } from "react-dom";
 export default function SpecialSubmit() {
     const dayMark = useAppStore((s) => s.dayMark);
