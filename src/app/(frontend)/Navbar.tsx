@@ -4,21 +4,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logout from "@/app/(frontend)/auth/Logout";
 import { useEffect, useState } from "react";
-import { LoadingSpinner } from "./home/components/LoadingSpinner";
+import { LoadingSpinner } from "./components/LoadingSpinner";
 
 interface NavBarProps {
     user: { name: string } | null;
 }
 
+interface calendarParams {
+    regionParam?: string
+    calendarGridParam?: string
+}
+
 export default function NavBar({ user }: NavBarProps) {
     const pathname = usePathname();
-    const [calendarParams, setCalendarParams] = useState({});
+    const [calendarParams, setCalendarParams] = useState<calendarParams>({});
     const [loading, setLoading] = useState(true);
 
     const date = new Date();
 
     useEffect(() => {
-        fetch("/services/get-calendar-params")
+        fetch("/api/calendar-params")
             .then((res) => res.json())
             .then((data) => setCalendarParams(data))
             .catch((err) => console.error(err));

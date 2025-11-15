@@ -1,4 +1,4 @@
-import { LoadingSpinner } from "../../LoadingSpinner";
+import { LoadingSpinner } from "@/app/(frontend)/components/LoadingSpinner";
 import { useAppStore } from "@/app/(frontend)/store/useAppStore";
 import { DBDayMark } from "@/app/types/dateTypes";
 import { getDateRange } from "@/app/utilities/getDateRange";

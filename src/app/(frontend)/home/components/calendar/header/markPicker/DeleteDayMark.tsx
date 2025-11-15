@@ -2,7 +2,7 @@
 import { useFormStatus } from "react-dom";
 import { deleteDayActionForm } from "@/app/(frontend)/home/actions/deleteDayMark.action";
 import { MdDelete } from "react-icons/md";
-import { LoadingSpinner } from "../../../LoadingSpinner";
+import { LoadingSpinner } from "@/app/(frontend)/components/LoadingSpinner";
 type DayMarkProp = { id: string; title: string; background_color: string; font_color: string };
 
 export default function DeleteDayMark({ dayMark }: { dayMark: DayMarkProp }) {

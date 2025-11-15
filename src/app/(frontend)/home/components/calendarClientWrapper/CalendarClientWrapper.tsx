@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { setCalendarParamsAction } from "./setCalendarParamsAction";
-import { LoadingSpinner } from "../LoadingSpinner";
+import { LoadingSpinner } from "@/app/(frontend)/components/LoadingSpinner";
 
 export function CalendarClientWrapper({ children }: { children: React.ReactNode }) {
     const [isLoading, setIsLoading] = useState(true);

@@ -1,14 +1,16 @@
 "use client";
 import { useFormStatus } from "react-dom";
-import { LoadingSpinner } from "../../../components/LoadingSpinner";
+import { LoadingSpinner } from "@/app/(frontend)/components/LoadingSpinner";
 import { createDayMarkAction } from "../createDayMark.action";
 
 export default function SubmitNewDayMark({ disabled, handleSubmit }: { disabled: boolean; handleSubmit: () => void }) {
     const { pending } = useFormStatus();
 
     const formAction = async (formData: FormData) => {
-        await createDayMarkAction(formData);
-        handleSubmit();
+        if (!disabled) {
+            await createDayMarkAction(formData);
+            handleSubmit();
+        }
     };
 
     return (

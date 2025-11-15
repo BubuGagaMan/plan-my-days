@@ -4,7 +4,7 @@ import { useFormStatus } from "react-dom";
 import { updateDayNotes } from "../serverActions";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useDetailsEdit } from "../DetailsEditContext";
-import { LoadingSpinner } from "@/app/(frontend)/home/components/LoadingSpinner";
+import { LoadingSpinner } from "@/app/(frontend)/components/LoadingSpinner";
 
 type Props = {
     date: string;
