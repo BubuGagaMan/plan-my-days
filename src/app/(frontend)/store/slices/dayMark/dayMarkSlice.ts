@@ -1,7 +1,7 @@
 // store/slices/themeSlice.ts
 import { StateCreator } from "zustand";
 import { initDayMark } from "./initDayMark";
-import { DBDayMark } from "@/app/(frontend)/home/types/dateTypes";
+import { DBDayMark } from "@/app/types/dateTypes";
 import { UseAppStore } from "../../useAppStore";
 
 export interface DayMarkSlice {
