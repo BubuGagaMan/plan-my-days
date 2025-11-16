@@ -1,7 +1,11 @@
+import { getAllDayMarks } from "@/app/services/dayMarks.services";
 import CreateDayMarkFormContent from "./components/CreateDayMarkFormContent";
 
 
-export default  function CreateDayMarkPage() {
+export default async function CreateDayMarkPage() {
 
-    return <CreateDayMarkFormContent formHeader={"Create a new day mark"} isNotModal />;
+    const userDayMarks = await getAllDayMarks() ?? []
+    const dayMarkTitles = new Set(userDayMarks.map(mark => mark.title))
+    //console.log(dayMarkTitles)
+    return <CreateDayMarkFormContent userDayMarkTitles={dayMarkTitles} formHeader={"Create a new day mark"} isNotModal />;
 }
