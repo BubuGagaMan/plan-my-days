@@ -1,12 +1,21 @@
-import QueryParamInput from "./components/QueryParamInput";
 import Calendar from "./components/calendar/Calendar";
+import { CalendarClientWrapper } from "./components/calendarClientWrapper/CalendarClientWrapper";
 
-export default function Home({ searchParams }: { searchParams: any }) {
+type Props = {
+    searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function MarkMultipleDaysPage({ searchParams }: Props) {
+    const SP = await searchParams;
+
+    // await setCalendarParamsAction(SP);
     return (
         <>
-            <h1>HOME</h1>
-            <QueryParamInput label="assignable off days" />
-            <Calendar searchParams={searchParams} />
+            <div className="w-full h-full">
+                <CalendarClientWrapper>
+                    <Calendar SP={SP} />
+                </CalendarClientWrapper>
+            </div>
         </>
     );
 }
